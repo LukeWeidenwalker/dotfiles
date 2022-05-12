@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose zsh-autosuggestions)
+plugins=(git docker docker-compose zsh-autosuggestions poetry)
 # bindkey '^' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
@@ -116,7 +116,8 @@ fpath+=$HOME/.zsh/pure
 cd ~
 
 # add docker credential service to path
-export PATH=$PATH:/usr/local/bin/docker-credential-pass
+PATH=$PATH:/usr/local/bin/docker-credential-pass
+PATH=$PATH:~/.local/bin
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/luk/programs/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
