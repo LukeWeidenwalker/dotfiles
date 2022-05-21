@@ -92,6 +92,8 @@ window:
     x: 0
     y: 0
 
+  decorations: Full
+
 cursor:
   style:
     shape: Block
@@ -101,3 +103,8 @@ cursor:
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   unfocused_hollow: true
+
+key_bindings:
+  - { key: V,        mods: Control, action: Paste                        }
+  - { key: C,        mods: Control, action: Copy                         }
+  - { key: N,        mods: Control,            action: SpawnNewInstance  }
