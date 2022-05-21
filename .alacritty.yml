@@ -105,6 +105,7 @@ cursor:
   unfocused_hollow: true
 
 key_bindings:
-  - { key: V,        mods: Control, action: Paste                        }
-  - { key: C,        mods: Control, action: Copy                         }
-  - { key: N,        mods: Control,            action: SpawnNewInstance  }
+  - { key: V, mods: Control, action: Paste            }
+  - { key: C, mods: Control, action: Copy             }
+  - { key: C, mods: Control|Shift, chars: "\x03"      }
+  - { key: N, mods: Control, action: SpawnNewInstance }
