@@ -113,7 +113,6 @@ export GPG_TTY=$(tty)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 fpath+=$HOME/.zsh/pure
-cd ~
 
 # add docker credential service to path
 PATH=$PATH:/usr/local/bin/docker-credential-pass
