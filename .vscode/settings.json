@@ -1,8 +1,0 @@
-{
-    "workbench.colorTheme": "Nord",
-    "workbench.startupEditor": "none",
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "editor.fontFamily": "'Cascadia Code', 'monospace', monospace",
-    "editor.fontLigatures": false
-}
