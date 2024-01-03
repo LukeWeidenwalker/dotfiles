@@ -115,6 +115,7 @@ export GPG_TTY=$(tty)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pt="parquet-tools"
 
 fpath+=$HOME/.zsh/pure
 
