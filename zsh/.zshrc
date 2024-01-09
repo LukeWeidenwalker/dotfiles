@@ -131,3 +131,6 @@ eval "$(pyenv init -)"
 if [ -f ".zsh_flavor" ]; then
     source ".zsh_flavor"
 fi
+
+# This is to make sure that autocompletions are loaded, see https://thevaluable.dev/zsh-completion-guide-examples/
+autoload -U compinit; compinit
