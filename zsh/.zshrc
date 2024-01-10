@@ -128,8 +128,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # Execute any machine-specific customisations (e.g. only for work/home/etc.)
-if [ -f ".zsh_flavor" ]; then
-    source ".zsh_flavor"
+if [ -f "$HOME/.zsh_flavor" ]; then
+  source "$HOME/.zsh_flavor"
 fi
 
 # This is to make sure that autocompletions are loaded, see https://thevaluable.dev/zsh-completion-guide-examples/
