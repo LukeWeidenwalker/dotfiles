@@ -127,6 +127,20 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# Shell-GPT integration ZSH v0.2
+_sgpt_zsh() {
+if [[ -n "$BUFFER" ]]; then
+    _sgpt_prev_cmd=$BUFFER
+    BUFFER+="⌛"
+    zle -I && zle redisplay
+    BUFFER=$(sgpt --shell <<< "$_sgpt_prev_cmd" --no-interaction)
+    zle end-of-line
+fi
+}
+zle -N _sgpt_zsh
+bindkey ^l _sgpt_zsh
+# Shell-GPT integration ZSH v0.2
+
 # Execute any machine-specific customisations (e.g. only for work/home/etc.)
 if [ -f "$HOME/.zsh_flavor" ]; then
   source "$HOME/.zsh_flavor"
@@ -134,3 +148,11 @@ fi
 
 # This is to make sure that autocompletions are loaded, see https://thevaluable.dev/zsh-completion-guide-examples/
 autoload -U compinit; compinit
+. "$HOME/.cargo/env"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/plugins/dotenv /Users/luk/.oh-my-zsh/plugins/ssh-agent /Users/luk/.oh-my-zsh/plugins/poetry /Users/luk/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/luk/.oh-my-zsh/plugins/docker-compose /Users/luk/.oh-my-zsh/plugins/docker /Users/luk/.oh-my-zsh/plugins/git /Users/luk/.oh-my-zsh/functions /Users/luk/.oh-my-zsh/completions /Users/luk/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/luk/.zsh/pure)
+fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/plugins/dotenv /Users/luk/.oh-my-zsh/plugins/ssh-agent /Users/luk/.oh-my-zsh/plugins/poetry /Users/luk/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/luk/.oh-my-zsh/plugins/docker-compose /Users/luk/.oh-my-zsh/plugins/docker /Users/luk/.oh-my-zsh/plugins/git /Users/luk/.oh-my-zsh/functions /Users/luk/.oh-my-zsh/completions /Users/luk/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/luk/.zsh/pure)
+fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/plugins/dotenv /Users/luk/.oh-my-zsh/plugins/ssh-agent /Users/luk/.oh-my-zsh/plugins/poetry /Users/luk/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/luk/.oh-my-zsh/plugins/docker-compose /Users/luk/.oh-my-zsh/plugins/docker /Users/luk/.oh-my-zsh/plugins/git /Users/luk/.oh-my-zsh/functions /Users/luk/.oh-my-zsh/completions /Users/luk/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/luk/.zsh/pure)
+
