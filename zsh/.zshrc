@@ -116,7 +116,7 @@ export GPG_TTY=$(tty)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pt="parquet-tools"
-alias code_user_settings="code ~/Library/Application Support/Code/User/settings.json"
+alias code_user_settings="code ~/Library/Application\ Support/Code/User/settings.json"
 
 fpath+=$HOME/.zsh/pure
 
