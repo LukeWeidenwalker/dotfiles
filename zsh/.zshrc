@@ -116,6 +116,7 @@ export GPG_TTY=$(tty)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pt="parquet-tools"
+alias code_user_settings="code ~/Library/Application Support/Code/User/settings.json"
 
 fpath+=$HOME/.zsh/pure
 
@@ -123,9 +124,9 @@ fpath+=$HOME/.zsh/pure
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # Shell-GPT integration ZSH v0.2
 _sgpt_zsh() {
@@ -157,3 +158,4 @@ fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/custom/com
 fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/plugins/dotenv /Users/luk/.oh-my-zsh/plugins/ssh-agent /Users/luk/.oh-my-zsh/plugins/poetry /Users/luk/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/luk/.oh-my-zsh/plugins/docker-compose /Users/luk/.oh-my-zsh/plugins/docker /Users/luk/.oh-my-zsh/plugins/git /Users/luk/.oh-my-zsh/functions /Users/luk/.oh-my-zsh/completions /Users/luk/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/luk/.zsh/pure)
 
 source "$HOME/.rye/env"
+
