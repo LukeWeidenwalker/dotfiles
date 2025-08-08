@@ -1,0 +1,3 @@
+alias code_s="code ~/Library/Application\ Support/Code/User/settings.json"
+alias cursor_s="cursor ~/Library/Application\ Support/Cursor/User/settings.json"
+alias pt="parquet-tools"

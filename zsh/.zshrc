@@ -107,40 +107,14 @@ export GPG_TTY=$(tty)
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pt="parquet-tools"
-alias code_user_settings="code ~/Library/Application\ Support/Code/User/settings.json"
+if [ -f ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+fi
 
 fpath+=$HOME/.zsh/pure
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Pyenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
-# Shell-GPT integration ZSH v0.2
-_sgpt_zsh() {
-if [[ -n "$BUFFER" ]]; then
-    _sgpt_prev_cmd=$BUFFER
-    BUFFER+="⌛"
-    zle -I && zle redisplay
-    BUFFER=$(sgpt --shell <<< "$_sgpt_prev_cmd" --no-interaction)
-    zle end-of-line
-fi
-}
-zle -N _sgpt_zsh
-bindkey ^l _sgpt_zsh
-# Shell-GPT integration ZSH v0.2
 
 # Execute any machine-specific customisations (e.g. only for work/home/etc.)
 if [ -f "$HOME/.zsh_flavor" ]; then
@@ -155,7 +129,3 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/plugins/dotenv /Users/luk/.oh-my-zsh/plugins/ssh-agent /Users/luk/.oh-my-zsh/plugins/poetry /Users/luk/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/luk/.oh-my-zsh/plugins/docker-compose /Users/luk/.oh-my-zsh/plugins/docker /Users/luk/.oh-my-zsh/plugins/git /Users/luk/.oh-my-zsh/functions /Users/luk/.oh-my-zsh/completions /Users/luk/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/luk/.zsh/pure)
 fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/plugins/dotenv /Users/luk/.oh-my-zsh/plugins/ssh-agent /Users/luk/.oh-my-zsh/plugins/poetry /Users/luk/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/luk/.oh-my-zsh/plugins/docker-compose /Users/luk/.oh-my-zsh/plugins/docker /Users/luk/.oh-my-zsh/plugins/git /Users/luk/.oh-my-zsh/functions /Users/luk/.oh-my-zsh/completions /Users/luk/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/luk/.zsh/pure)
-fpath=(/Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/custom/completions /Users/luk/.oh-my-zsh/plugins/dotenv /Users/luk/.oh-my-zsh/plugins/ssh-agent /Users/luk/.oh-my-zsh/plugins/poetry /Users/luk/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/luk/.oh-my-zsh/plugins/docker-compose /Users/luk/.oh-my-zsh/plugins/docker /Users/luk/.oh-my-zsh/plugins/git /Users/luk/.oh-my-zsh/functions /Users/luk/.oh-my-zsh/completions /Users/luk/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/luk/.zsh/pure)
-
-source "$HOME/.rye/env"
-
