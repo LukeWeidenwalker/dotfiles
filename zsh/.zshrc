@@ -72,6 +72,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Install zsh-autosuggestions plugin if not already installed
+PLUGIN_DIR="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+if [ ! -d "$PLUGIN_DIR" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions "$PLUGIN_DIR"
+else
+  echo "Updating zsh-autosuggestions plugin..."
+  git -C "$PLUGIN_DIR" pull --quiet
+  echo "zsh-autosuggestions plugin updated"
+fi
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
