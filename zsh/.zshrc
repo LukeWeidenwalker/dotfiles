@@ -123,7 +123,6 @@ fi
 
 # This is to make sure that autocompletions are loaded, see https://thevaluable.dev/zsh-completion-guide-examples/
 autoload -U compinit; compinit
-. "$HOME/.cargo/env"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
